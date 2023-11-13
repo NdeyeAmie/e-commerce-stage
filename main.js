@@ -1,12 +1,16 @@
-const header = document.querySelector("header");
-      const hamburgerBtn = document.querySelector("#hamburger-btn");
-      const closeMenuBtn = document.querySelector("#close-menu-btn");
+const links = document.querySelectorAll("nav li");
+        const menuBtn = document.querySelector('.fa-bars');
+        const nav = document.querySelector('nav');
 
-      // Toggle mobile menu on hamburger button click
-      hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+        menuBtn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
 
-      // Close mobile menu on close button click
-      closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+        links.forEach((link) => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("active");
+            });
+        });
 
       const trendingSwiper = new Swiper(".trending__swiper", {
         loop: true,
